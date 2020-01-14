@@ -1,0 +1,4 @@
+# Exclude temporary files created by vim/gvim.
+
+*.swp
+*.swo
