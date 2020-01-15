@@ -33,6 +33,11 @@ if has("termguicolors")
     " enable true color
     set termguicolors
 endif
+
+Plug '907th/vim-auto-save'
+let g:auto_save = 1  " enable AutoSave on Vim startup
+"let g:auto_save_silent = 1  " do not display the auto-save notification
+
 " https://github.com/junegunn/vim-plug
 " Plugin outside ~/.vim/plugged with post-update hook
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
