@@ -6,6 +6,19 @@
 " We set it explicitely to make our position clear!
 set nocompatible
 
+"------------------
+" Load vim-plug
+"------------------
+
+" Plugins will be downloaded under the specified directory.
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+" Add other plugins here.
 filetype plugin indent on  " Load plugins according to detected filetype.
 syntax on                  " Enable syntax highlighting.
 
