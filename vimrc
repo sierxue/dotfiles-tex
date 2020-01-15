@@ -19,6 +19,10 @@ endif
 
 call plug#begin('~/.vim/plugged')
 " Add other plugins here.
+" https://github.com/junegunn/vim-plug
+" Plugin outside ~/.vim/plugged with post-update hook
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
 filetype plugin indent on  " Load plugins according to detected filetype.
 syntax on                  " Enable syntax highlighting.
 
