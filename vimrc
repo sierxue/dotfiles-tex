@@ -42,6 +42,9 @@ let g:auto_save = 1  " enable AutoSave on Vim startup
 " Plugin outside ~/.vim/plugged with post-update hook
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
+" List ends here. Plugins become visible to Vim after this call.
+call plug#end()
+
 filetype plugin indent on  " Load plugins according to detected filetype.
 syntax on                  " Enable syntax highlighting.
 
