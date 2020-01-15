@@ -19,6 +19,20 @@ endif
 
 call plug#begin('~/.vim/plugged')
 " Add other plugins here.
+Plug 'altercation/vim-colors-solarized'
+syntax enable
+colorscheme solarized
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+endif
+
+" https://lotabout.me/2018/true-color-for-tmux-and-vim/
+if has("termguicolors")
+    " enable true color
+    set termguicolors
+endif
 " https://github.com/junegunn/vim-plug
 " Plugin outside ~/.vim/plugged with post-update hook
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
