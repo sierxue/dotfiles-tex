@@ -2,9 +2,21 @@
 " We set it explicitely to make our position clear!
 set nocompatible
 
+"--------------------------
+" Source other vimrc files
+"--------------------------
+
+try
+  source ~/.vimrc_local
+catch
+  " No such file? No problem; just ignore it.
+endtry
+
+"---------------
 "------------------
 " Load vim-plug
 "------------------
+"---------------
 
 " Plugins will be downloaded under the specified directory.
 if empty(glob('~/.vim/autoload/plug.vim'))
