@@ -1,7 +1,3 @@
-" https://github.com/mhinz/vim-galore/blob/master/static/minimal-vimrc.vim
-" A (not so) minimal vimrc.
-"
-
 " You want Vim, not vi. When Vim finds a vimrc, 'nocompatible' is set anyway.
 " We set it explicitely to make our position clear!
 set nocompatible
@@ -49,6 +45,9 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
+
+" https://github.com/mhinz/vim-galore/blob/master/static/minimal-vimrc.vim
+" A (not so) minimal vimrc.
 
 filetype plugin indent on  " Load plugins according to detected filetype.
 syntax on                  " Enable syntax highlighting.
