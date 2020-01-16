@@ -10,6 +10,7 @@
     ~/.dotfiles: ''
     ~/.gitconfig:
     ~/.profile:
+    ~/.shell/aliases.sh: shell/aliases.sh
     ~/.vimrc:
     ~/.zshrc:
 
