@@ -99,3 +99,10 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Aliases
+source ~/.shell/aliases.sh
+# Aliases in dotfiles-local (if existing)
+if [ -f ~/shell/aliases_local.sh ]; then
+    source ~/shell/aliases_local.sh
+fi
