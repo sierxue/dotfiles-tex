@@ -19,6 +19,11 @@ endif
 
 call plug#begin('~/.vim/plugged')
 " Add other plugins here.
+
+Plug 'lervag/vimtex'
+let g:tex_flavor = 'latex'
+let g:vimtex_view_method = 'zathura'
+
 Plug 'altercation/vim-colors-solarized'
 syntax enable
 colorscheme solarized
