@@ -106,6 +106,13 @@ if &shell =~# 'fish$'
 endif
 
 " Put all temporary files under the same directory.
+" Create these directories if they do not exist. Otherwise, E303: Unable to ...
+" https://stackoverflow.com/a/12488082/2400133 See the comment with high score.
+silent call mkdir ($HOME.'/.vim/files/backup', 'p')
+silent call mkdir ($HOME.'/.vim/files/info', 'p')
+silent call mkdir ($HOME.'/.vim/files/swap', 'p')
+silent call mkdir ($HOME.'/.vim/files/undo', 'p')
+
 " https://github.com/mhinz/vim-galore#handling-backup-swap-undo-and-viminfo-files
 set backup
 set backupdir   =$HOME/.vim/files/backup/
