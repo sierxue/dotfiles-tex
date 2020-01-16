@@ -13,9 +13,7 @@ catch
 endtry
 
 "---------------
-"------------------
 " Load vim-plug
-"------------------
 "---------------
 
 " Plugins will be downloaded under the specified directory.
@@ -118,8 +116,7 @@ set backup
 set backupdir   =$HOME/.vim/files/backup/
 set backupext   =-vimbackup
 set backupskip  =
-" ganx: Create the directory. Otherwise, E303: Unable to open swap file for "file_name_here".
-set directory   =$HOME/.vim/files/swap//
+set directory   =$HOME/.vim/files/swap/
 set updatecount =100
 set undofile
 set undodir     =$HOME/.vim/files/undo/
