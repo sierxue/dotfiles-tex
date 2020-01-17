@@ -150,6 +150,12 @@ Plug 'junegunn/fzf.vim'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
+"-----------------
+" System settings
+"-----------------
+" https://www.zhihu.com/question/60367881
+" https://github.com/vim/vim/issues/2049#issuecomment-494923065
+set maxmempattern=5000
 " https://github.com/mhinz/vim-galore/blob/master/static/minimal-vimrc.vim
 " A (not so) minimal vimrc.
 
