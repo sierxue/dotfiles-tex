@@ -140,6 +140,19 @@ Plug 'junegunn/fzf.vim'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
+"----------------
+" Basic settings
+"----------------
+set number      " Display line number.
+" https://stackoverflow.com/questions/989093/soft-wrap-at-80-characters-in-vim-in-window-of-arbitrary-width/989317
+set numberwidth=5
+set columns=86
+" autocmd VimResized * if (&columns > 72) | set columns=72| endif
+set textwidth=72
+set wrap
+set linebreak
+set showbreak=+
+
 "-----------------
 " System settings
 "-----------------
