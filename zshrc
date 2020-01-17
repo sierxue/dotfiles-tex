@@ -57,6 +57,9 @@ SPACESHIP_PROMPT_ORDER=(
   exit_code     # Exit code section
   char          # Prompt character
 )
+# Customization by ganx. Looks like there is a bug. Battery show is disabled. 
+# ref: https://github.com/denysdovhan/spaceship-prompt/issues/296
+SPACESHIP_BATTERY_SHOW=(false)
 ZSH_THEME="spaceship"
 
 # Set list of themes to pick from when loading at random
