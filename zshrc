@@ -160,6 +160,6 @@ source $ZSH/oh-my-zsh.sh
 # Aliases
 source ~/.shell/aliases.sh
 # Aliases in dotfiles-local (if existing)
-if [ -f ~/shell/aliases_local.sh ]; then
-    source ~/shell/aliases_local.sh
+if [ -f ~/.shell/aliases_local.sh ]; then
+    source ~/.shell/aliases_local.sh
 fi
