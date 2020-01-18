@@ -1,5 +1,5 @@
-" You want Vim, not vi. When Vim finds a vimrc, 'nocompatible' is
-" set anyway. We set it explicitely to make our position clear!
+" You want Vim, not vi. When Vim finds a vimrc, 'nocompatible' is set anyway.
+" We set it explicitely to make our position clear!
 set nocompatible
 
 "---------------
@@ -145,7 +145,7 @@ call plug#end()
 "----------------
 set number      " Display line number.
 " https://stackoverflow.com/questions/989093/soft-wrap-at-80-characters-in-vim-in-window-of-arbitrary-width/989317
-set numberwidth=5
+" set numberwidth=5
 set columns=86
 " autocmd VimResized * if (&columns > 72) | set columns=72| endif
 set textwidth=72
@@ -178,7 +178,7 @@ set shiftround             " >> indents to next multiple of 'shiftwidth'.
 set backspace   =indent,eol,start  " Make backspace work as you expect.
 set hidden                 " Switch between buffers without having to save first.
 set laststatus  =2         " Always show statusline.
-set display     =lastline  " Show as much as possible of the last line.
+" set display     =lastline  " Show as much as possible of the last line.
 
 set showmode               " Show current mode in command-line.
 set showcmd                " Show already typed keys when more are expected.
