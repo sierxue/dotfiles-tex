@@ -11,6 +11,7 @@
     ~/.gitconfig:
     ~/.profile:
     ~/.shell/aliases.sh: shell/aliases.sh
+    ~/.vim/UltiSnips: vim/UltiSnips
     ~/.vimrc:
     ~/.zshrc:
 
