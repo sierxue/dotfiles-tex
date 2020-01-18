@@ -13,14 +13,14 @@ alias amsp="\
 alias tl="\
     python3 \
     /usr/local/texlive/2019/texmf-dist/scripts/texliveonfly/texliveonfly.py \
-    --compiler=lualatex
+    --compiler=lualatex \
 "
 alias tp="\
     python3 \
     /usr/local/texlive/2019/texmf-dist/scripts/texliveonfly/texliveonfly.py \
-    --compiler=pdflatex
+    --compiler=pdflatex \
 "
 alias tx="python3 \
     /usr/local/texlive/2019/texmf-dist/scripts/texliveonfly/texliveonfly.py \
-    --compiler=xelatex
+    --compiler=xelatex \
 "
