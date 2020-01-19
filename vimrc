@@ -183,8 +183,31 @@ set laststatus  =2         " Always show statusline.
 set showmode               " Show current mode in command-line.
 set showcmd                " Show already typed keys when more are expected.
 
-set incsearch              " Highlight while searching with / or ?.
-set hlsearch               " Keep matches highlighted.
+" set incsearch              " Highlight while searching with / or ?.
+" set hlsearch               " Keep matches highlighted.
+" Do incremental searching when it's possible to timeout.
+if has('reltime')
+  set incsearch
+endif
+" highlight serach
+set hlsearch
+" https://vi.stackexchange.com/questions/184/how-can-i-clear-word-highlighting-in-the-current-document-e-g-such-as-after-se
+nnoremap <Leader><space> :noh<cr>
+" https://vim.fandom.com/wiki/Searching#Case_sensitivity
+:set ignorecase
+:set smartcase
+:nnoremap * /\<<C-R>=expand('<cword>')<CR>\><CR>
+:nnoremap # ?\<<C-R>=expand('<cword>')<CR>\><CR>
+" http://vim.wikia.com/wiki/Search_across_multiple_lines?useskin=monobook
+" Search for the ... arguments separated with whitespace (if no '!'),
+" or with non-word characters (if '!' added to command).
+function! SearchMultiLine(bang, ...)
+  if a:0 > 0
+    let sep = (a:bang) ? '\_W\+' : '\_s\+'
+    let @/ = join(a:000, sep)
+  endif
+endfunction
+command! -bang -nargs=* -complete=tag S call SearchMultiLine(<bang>0, <f-args>)|normal! /<C-R>/<CR>
 
 set ttyfast                " Faster redrawing.
 set lazyredraw             " Only redraw when necessary.
