@@ -29,6 +29,10 @@ let g:vimtex_quickfix_latexlog = {
         \ },
         \}
 
+Plug 'vimwiki/vimwiki'
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
+
 Plug 'w0rp/ale'
 " side bar display
 let g:ale_sign_column_always = 1
