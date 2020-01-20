@@ -233,31 +233,35 @@ set synmaxcol   =200       " Only highlight the first 200 columns.
 "   set shell=/bin/bash
 " endif
 
-" Put all temporary files under the same directory.
-" Create these directories if they do not exist. Otherwise, E303: Unable to ...
-" https://stackoverflow.com/a/12488082/2400133 See the comment with high score.
-if !isdirectory("$HOME.'/.vim/files/backup'")
-    call mkdir("$HOME.'/.vim/files/backup'", "p")
+" https://github.com/mhinz/vim-galore#Temporary-files
+if !isdirectory($HOME.'/.vim/files') && exists('*mkdir')
+  call mkdir($HOME.'/.vim/files')
 endif
-if !isdirectory("$HOME.'/.vim/files/info'")
-    call mkdir("$HOME.'/.vim/files/info'", "p")
+if !isdirectory($HOME.'/.vim/files/backup') && exists('*mkdir')
+  call mkdir($HOME.'/.vim/files/backup')
 endif
-if !isdirectory("$HOME.'/.vim/files/swap'")
-    call mkdir("$HOME.'/.vim/files/swap'", "p")
+if !isdirectory($HOME.'/.vim/files/info') && exists('*mkdir')
+  call mkdir($HOME.'/.vim/files/info')
 endif
-if !isdirectory("$HOME.'/.vim/files/undo'")
-    call mkdir("$HOME.'/.vim/files/undo'", "p")
+if !isdirectory($HOME.'/.vim/files/swap') && exists('*mkdir')
+  call mkdir($HOME.'/.vim/files/swap')
+endif
+if !isdirectory($HOME.'/.vim/files/undo') && exists('*mkdir')
+  call mkdir($HOME.'/.vim/files/undo')
 endif
 
-" https://github.com/mhinz/vim-galore#handling-backup-swap-undo-and-viminfo-files
+" backup files
 set backup
 set backupdir   =$HOME/.vim/files/backup/
 set backupext   =-vimbackup
 set backupskip  =
-set directory   =$HOME/.vim/files/swap/
+" swap files
+set directory   =$HOME/.vim/files/swap//
 set updatecount =100
+" undo files
 set undofile
 set undodir     =$HOME/.vim/files/undo/
+" viminfo files
 set viminfo     ='100,n$HOME/.vim/files/info/viminfo
 
 "--------------------------
