@@ -236,10 +236,18 @@ set synmaxcol   =200       " Only highlight the first 200 columns.
 " Put all temporary files under the same directory.
 " Create these directories if they do not exist. Otherwise, E303: Unable to ...
 " https://stackoverflow.com/a/12488082/2400133 See the comment with high score.
-silent call mkdir ($HOME.'/.vim/files/backup', 'p')
-silent call mkdir ($HOME.'/.vim/files/info', 'p')
-silent call mkdir ($HOME.'/.vim/files/swap', 'p')
-silent call mkdir ($HOME.'/.vim/files/undo', 'p')
+if !isdirectory("$HOME.'/.vim/files/backup'")
+    call mkdir("$HOME.'/.vim/files/backup'", "p")
+endif
+if !isdirectory("$HOME.'/.vim/files/info'")
+    call mkdir("$HOME.'/.vim/files/info'", "p")
+endif
+if !isdirectory("$HOME.'/.vim/files/swap'")
+    call mkdir("$HOME.'/.vim/files/swap'", "p")
+endif
+if !isdirectory("$HOME.'/.vim/files/undo'")
+    call mkdir("$HOME.'/.vim/files/undo'", "p")
+endif
 
 " https://github.com/mhinz/vim-galore#handling-backup-swap-undo-and-viminfo-files
 set backup
