@@ -4,15 +4,13 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/home/ganx/.oh-my-zsh"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
-# Customization by ganx. Looks like there is a bug. Battery show is disabled. 
-# ref: https://github.com/denysdovhan/spaceship-prompt/issues/296
-SPACESHIP_BATTERY_SHOW=(false)
-ZSH_THEME="spaceship"
+if [ -f ~/.df/machine-specific/zsh_theme.sh ]; then
+    source ~/.df/machine-specific/zsh_theme.sh
+elif [ -f ~/.df/dotfiles-local/zsh_theme-local.sh ]; then
+    source ~/.df/dotfiles-local/zsh_theme-local.sh
+else
+    ZSH_THEME="random"
+fi
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
