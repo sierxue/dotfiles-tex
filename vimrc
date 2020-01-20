@@ -128,6 +128,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'mhinz/vim-startify'
 let g:startify_custom_header = []
 
+Plug 'lifepillar/vim-cheat40'
+
 Plug '907th/vim-auto-save'
 let g:auto_save = 1  " enable AutoSave on Vim startup
 "let g:auto_save_silent = 1  " do not display the auto-save notification
