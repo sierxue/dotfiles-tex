@@ -72,15 +72,15 @@ fi
 # Add wisely, as too many plugins slow down shell startup.
 # https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#Oh-my-zsh
 # We can set crontab to update plugin github.com/zsh-users/zsh-syntax-highlighting.
-if [ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting ];
+if [ ! -d $ZSH/custom/plugins/zsh-syntax-highlighting ];
 then
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
-    ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+        $ZSH/custom/plugins/zsh-syntax-highlighting
 fi
-if [ ! -d ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions ];
+if [ ! -d $ZSH/custom/plugins/zsh-completions ];
 then
     git clone https://github.com/zsh-users/zsh-completions \
-    ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-completions
+        $ZSH/custom/plugins/zsh-completions
 fi
 
 plugins=(git z zsh-syntax-highlighting zsh-completions)
