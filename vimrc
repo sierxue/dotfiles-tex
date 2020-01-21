@@ -19,15 +19,17 @@ call plug#begin('~/.vim/plugged')
 Plug 'lervag/vimtex'
 let g:tex_flavor = 'latex'
 let g:vimtex_view_method = 'zathura'
-" Disable overfull/underfull \hbox and all package warnings
+" Disable overfull/underfull \hbox.
 let g:vimtex_quickfix_latexlog = {
         \ 'overfull' : 0,
         \ 'underfull' : 0,
-        \ 'font' : 0,
-        \ 'packages' : {
-        \   'default' : 0,
-        \ },
         \}
+let g:vimtex_quickfix_ignore_filters = [
+        \ 'FandolSong-Regular',
+        \ 'FandolKai-Regular',
+        \ 'FandolFang-Regular',
+        \ 'Package Fancyhdr Warning',
+        \]
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 " set to 1, the vim will refresh markdown when save the buffer or
