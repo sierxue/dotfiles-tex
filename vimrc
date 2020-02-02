@@ -169,10 +169,11 @@ let g:UltiSnipsUsePythonVersion = 3
 
 " Folding
 " https://vim.fandom.com/wiki/Folding#Indent_folding_with_manual_folds
-augroup vimrc
-  au BufReadPre * setlocal foldmethod=indent
-  au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
-augroup END
+" augroup vimrc
+"   au BufReadPre * setlocal foldmethod=indent
+"   au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
+" augroup END
+set foldmethod=indent
 Plug 'tmhedberg/SimpylFold'
 let g:SimpylFold_docstring_preview=1
 " https://stackoverflow.com/a/7425005/2400133
