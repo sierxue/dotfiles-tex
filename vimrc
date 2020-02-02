@@ -173,7 +173,7 @@ let g:UltiSnipsUsePythonVersion = 3
 "   au BufReadPre * setlocal foldmethod=indent
 "   au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
 " augroup END
-set foldmethod=indent
+setlocal foldmethod=indent
 Plug 'tmhedberg/SimpylFold'
 let g:SimpylFold_docstring_preview=1
 " https://stackoverflow.com/a/7425005/2400133
