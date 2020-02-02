@@ -26,6 +26,7 @@ let g:vimtex_quickfix_latexlog = {
         \}
 let g:vimtex_quickfix_ignore_filters = [
         \ 'FandolSong-Regular',
+        \ 'FandolHei-Regular',
         \ 'FandolKai-Regular',
         \ 'FandolFang-Regular',
         \ 'Package Fancyhdr Warning',
