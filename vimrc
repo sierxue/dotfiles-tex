@@ -18,6 +18,8 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'lervag/vimtex'
 let g:tex_flavor = 'latex'
+" Remove warning message: Can't use callbacks without +clientserver · Issue #507 · lervag/vimtex
+let g:vimtex_compiler_latexmk = {'callback' : 0}
 let g:vimtex_view_method = 'zathura'
 " Disable overfull/underfull \hbox.
 let g:vimtex_quickfix_latexlog = {
