@@ -223,7 +223,9 @@ let g:auto_save = 1  " enable AutoSave on Vim startup
 
 " https://github.com/junegunn/vim-plug
 " Plugin outside ~/.vim/plugged with post-update hook
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" The above plug is removed since it might be very slow to install.
+" An alternative way is to install by git separately.
 Plug 'junegunn/fzf.vim'
 
 " List ends here. Plugins become visible to Vim after this call.
