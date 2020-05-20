@@ -4,6 +4,11 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/home/ganx/.oh-my-zsh"
 
+if [ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ];
+then
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions    
+fi
+
 if [ -f ~/.df/machine-specific/zsh_theme.sh ]; then
     source ~/.df/machine-specific/zsh_theme.sh
 elif [ -f ~/.df/dotfiles-local/zsh_theme-local.sh ]; then
@@ -83,7 +88,7 @@ then
         $ZSH/custom/plugins/zsh-completions
 fi
 
-plugins=(git z zsh-syntax-highlighting zsh-completions)
+plugins=(git z zsh-autosuggestions zsh-syntax-highlighting zsh-completions)
 autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
