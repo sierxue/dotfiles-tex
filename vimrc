@@ -137,24 +137,13 @@ let g:airline#extensions#ale#enabled = 1
 let g:ale_python_pylint_options = "--init-hook='import sys; sys.path.append(\".\")'"
 
 Plug 'maralla/completor.vim'
-" maralla/completor configuration
-" https://github.com/maralla/completor.vim/issues/41
-"let g:completor_tex_omni_trigger =
-"        \   '\\(?:'
-"        \  .   '\w*cite\w*(?:\s*\[[^]]*\]){0,2}\s*{[^}]*'
-"        \  .  '|\w*ref(?:\s*\{[^}]*|range\s*\{[^,}]*(?:}{)?)'
-"        \  .  '|hyperref\s*\[[^]]*'
-"        \  .  '|includegraphics\*?(?:\s*\[[^]]*\]){0,2}\s*\{[^}]*'
-"        \  .  '|(?:include(?:only)?|input)\s*\{[^}]*'
-"        \  .')'
-
 " Use Tab to select completion
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
 " Use Tab to trigger completion (disable auto trigger)
 let g:completor_auto_trigger = 1
-" inoremap <expr> <Tab> pumvisible() ? "<C-N>" : "<C-R>=completor#do('complete')<CR>"
+
 
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
