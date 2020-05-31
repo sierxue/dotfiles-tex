@@ -18,6 +18,9 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'lervag/vimtex'
 let g:tex_flavor = 'latex'
+" Use this option to disable/enable vimtex improved syntax highlighting.
+" Default value: 1
+let g:vimtex_syntax_enabled=1
 " Remove warning message: Can't use callbacks without +clientserver · Issue #507 · lervag/vimtex
 let g:vimtex_compiler_latexmk = {'callback' : 0}
 let g:vimtex_view_method = 'zathura'
@@ -27,11 +30,14 @@ let g:vimtex_quickfix_latexlog = {
         \ 'underfull' : 0,
         \}
 let g:vimtex_quickfix_ignore_filters = [
+        \ 'Unused global option(s)',
         \ 'FandolSong-Regular',
         \ 'FandolHei-Regular',
         \ 'FandolKai-Regular',
         \ 'FandolFang-Regular',
         \ 'Package Fancyhdr Warning',
+        \ 'Package etex Warning',
+        \ 'Empty bibliography',
         \]
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
