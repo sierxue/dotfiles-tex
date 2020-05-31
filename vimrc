@@ -144,6 +144,8 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
 " Use Tab to trigger completion (disable auto trigger)
 let g:completor_auto_trigger = 1
 
+Plug 'masawada/completor-dictionary'
+autocmd FileType * execute 'setlocal dictionary='.expand($HOME.'/.vim/dict/'.&filetype.'.dict')
 
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
