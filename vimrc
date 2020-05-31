@@ -257,7 +257,7 @@ set encoding=utf-8
 " Terminal coding
 set termencoding=utf-8
 " The coding of current file
-set fileencoding=ucs-bom,utf-8,gbk,cp936,gb2312,big5,euc-jp,euc-kr,latin1
+set fileencodings=ucs-bom,utf-8,gbk,cp936,gb2312,big5,euc-jp,euc-kr,latin1
 
 "-----------------
 " a minimal vimrc
