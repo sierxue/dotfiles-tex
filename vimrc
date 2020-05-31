@@ -159,6 +159,16 @@ let g:UltiSnipsEditSplit="vertical"
 " To use python version 3.x: >
 let g:UltiSnipsUsePythonVersion = 3
 
+" Add settings from 'github.com/gillescastel/latex-snippets'
+Plug 'KeitaNakamura/tex-conceal.vim'
+    set conceallevel=1
+    let g:tex_conceal='abdmg'
+    hi Conceal ctermbg=none
+
+setlocal spell
+set spelllang=en_us
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+
 " Folding
 " https://vim.fandom.com/wiki/Folding#Indent_folding_with_manual_folds
 " augroup vimrc
