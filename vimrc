@@ -241,6 +241,12 @@ set showbreak=+
 " https://github.com/vim/vim/issues/2049#issuecomment-494923065
 set maxmempattern=5000
 
+set encoding=utf-8
+" Terminal coding
+set termencoding=utf-8
+" The coding of current file
+set fileencoding=ucs-bom,utf-8,gbk,cp936,gb2312,big5,euc-jp,euc-kr,latin1
+
 "-----------------
 " a minimal vimrc
 "-----------------
