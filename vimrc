@@ -9,6 +9,22 @@ set nocompatible
 " Using the autocmd method, you could customize when the directory change
 " takes place. For example, to not change directory if the file is in /tmp:
 autocmd BufEnter * if expand("%:p:h") !~ '^/tmp' | silent! lcd %:p:h | endif
+
+" Only do this part when compiled with support for autocommands.
+if has("autocmd")
+  " Put these in an autocmd group, so that you can revert them with:
+  " ":augroup vimStartup | au! | augroup END"
+  augroup vimStartup
+    au!
+    " When editing a file, always jump to the last known cursor position.
+    " Don't do it when the position is invalid or when inside an event handler
+    " (happens when dropping a file on gvim).
+    autocmd BufReadPost *
+      \ if line("'\"") >= 1 && line("'\"") <= line("$") |
+      \   exe "normal! g`\"" |
+      \ endif
+  augroup END
+endif " has("autocmd")
 "---------------
 " Load vim-plug
 "---------------
