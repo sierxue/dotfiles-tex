@@ -2,6 +2,13 @@
 " We set it explicitely to make our position clear!
 set nocompatible
 
+"------------------
+" Autocmd
+"------------------
+" https://vim.fandom.com/wiki/Set_working_directory_to_the_current_file
+" Using the autocmd method, you could customize when the directory change
+" takes place. For example, to not change directory if the file is in /tmp:
+autocmd BufEnter * if expand("%:p:h") !~ '^/tmp' | silent! lcd %:p:h | endif
 "---------------
 " Load vim-plug
 "---------------
