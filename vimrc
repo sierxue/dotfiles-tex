@@ -168,8 +168,20 @@ Plug 'KeitaNakamura/tex-conceal.vim'
     hi Conceal ctermbg=none
 
 setlocal spell
-set spelllang=en_us
+set spelllang=en_us,cjk
+" https://www.zhihu.com/question/30737688/answer/80203854
+autocmd FileType tex setlocal spell spelllang=en_us,cjk
+autocmd FileType markdown setlocal spell spelllang=en_us,cjk
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+" Share vim spellchecking additions between multiple machines.
+" https://vi.stackexchange.com/a/5052/16763
+set spellfile=~/.vim/spell/en.utf-8.add
+" re-generate spl file for spell checking
+for d in glob('~/.vim/spell/*.add', 1, 1)
+    if filereadable(d) && (!filereadable(d . '.spl') || getftime(d) > getftime(d . '.spl'))
+        exec 'mkspell! ' . fnameescape(d)
+    endif
+endfor
 
 " Folding
 " https://vim.fandom.com/wiki/Folding#Indent_folding_with_manual_folds
