@@ -25,6 +25,10 @@ if has("autocmd")
       \ endif
   augroup END
 endif " has("autocmd")
+
+"Change vimrc with auto reload
+autocmd! bufwritepost .vimrc source %
+
 "---------------
 " Load vim-plug
 "---------------
