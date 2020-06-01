@@ -1,5 +1,5 @@
 " You want Vim, not vi. When Vim finds a vimrc, 'nocompatible' is set anyway.
-" We set it explicitely to make our position clear!
+" We set it explicitly to make our position clear!
 set nocompatible
 
 "------------------
@@ -276,8 +276,8 @@ call plug#end()
 " Basic settings
 "----------------
 set number      " Display line number.
-" https://stackoverflow.com/questions/989093/soft-wrap-at-80-characters-in-vim-in-window-of-arbitrary-width/989317
 " set numberwidth=5
+" https://stackoverflow.com/a/26284471/2400133
 set columns=86
 " autocmd VimResized * if (&columns > 72) | set columns=72| endif
 set textwidth=72
@@ -329,8 +329,9 @@ if has('reltime')
 endif
 " highlight serach
 set hlsearch
-" https://vi.stackexchange.com/questions/184/how-can-i-clear-word-highlighting-in-the-current-document-e-g-such-as-after-se
+" https://vi.stackexchange.com/a/185/16763
 nnoremap <Leader><space> :noh<cr>
+
 " https://vim.fandom.com/wiki/Searching#Case_sensitivity
 :set ignorecase
 :set smartcase
