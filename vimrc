@@ -137,12 +137,12 @@ let g:airline#extensions#ale#enabled = 1
 let g:ale_python_pylint_options = "--init-hook='import sys; sys.path.append(\".\")'"
 
 Plug 'maralla/completor.vim'
-" Use Tab to select completion
+" Trigger completion automatically (Disable auto trigger by setting 1 as 0)
+let g:completor_auto_trigger = 1
+" Use Tab to select a completion from candidates.
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
-" Use Tab to trigger completion (disable auto trigger)
-let g:completor_auto_trigger = 1
 
 Plug 'masawada/completor-dictionary'
 autocmd FileType * execute 'setlocal dictionary='.expand($HOME.'/.vim/dict/'.&filetype.'.dict')
