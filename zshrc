@@ -127,3 +127,8 @@ source ~/.shell/aliases.sh
 if [ -f ~/.shell/aliases_local.sh ]; then
     source ~/.shell/aliases_local.sh
 fi
+
+if [ -f ~/.df/dotfiles-local/zshrc_local ]; then
+    source ~/.df/dotfiles-local/zshrc_local
+fi
+
