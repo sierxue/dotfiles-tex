@@ -182,22 +182,6 @@ Plug 'KeitaNakamura/tex-conceal.vim'
     let g:tex_conceal='abdmg'
     hi Conceal ctermbg=none
 
-setlocal spell
-set spelllang=en_us,cjk
-" https://www.zhihu.com/question/30737688/answer/80203854
-autocmd FileType tex setlocal spell spelllang=en_us,cjk
-autocmd FileType markdown setlocal spell spelllang=en_us,cjk
-inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
-" Share vim spellchecking additions between multiple machines.
-" https://vi.stackexchange.com/a/5052/16763
-set spellfile=~/.vim/spell/en.utf-8.add
-" re-generate spl file for spell checking
-for d in glob('~/.vim/spell/*.add', 1, 1)
-    if filereadable(d) && (!filereadable(d . '.spl') || getftime(d) > getftime(d . '.spl'))
-        exec 'mkspell! ' . fnameescape(d)
-    endif
-endfor
-
 " Folding
 " https://vim.fandom.com/wiki/Folding#Indent_folding_with_manual_folds
 " augroup vimrc
@@ -268,6 +252,22 @@ call deoplete#custom#var('omni', 'input_patterns', {
 " Plug 'roxma/vim-hug-neovim-rpc' log configurations
 let $NVIM_PYTHON_LOG_FILE="/tmp/nvim_log"
 let $NVIM_PYTHON_LOG_LEVEL="DEBUG"
+
+setlocal spell
+set spelllang=en_us,cjk
+" https://www.zhihu.com/question/30737688/answer/80203854
+autocmd FileType tex setlocal spell spelllang=en_us,cjk
+autocmd FileType markdown setlocal spell spelllang=en_us,cjk
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+" Share vim spellchecking additions between multiple machines.
+" https://vi.stackexchange.com/a/5052/16763
+set spellfile=~/.vim/spell/en.utf-8.add
+" re-generate spl file for spell checking
+for d in glob('~/.vim/spell/*.add', 1, 1)
+    if filereadable(d) && (!filereadable(d . '.spl') || getftime(d) > getftime(d . '.spl'))
+        exec 'mkspell! ' . fnameescape(d)
+    endif
+endfor
 
 "----------------
 " Basic settings
