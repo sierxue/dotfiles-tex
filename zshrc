@@ -11,8 +11,8 @@ fi
 
 if [ -f ~/.df/machine-specific/zsh_theme.sh ]; then
     source ~/.df/machine-specific/zsh_theme.sh
-elif [ -f ~/.df/dotfiles-local/zsh_theme-local.sh ]; then
-    source ~/.df/dotfiles-local/zsh_theme-local.sh
+elif [ -f ~/.df/dotfiles-local/zsh_theme_local.sh ]; then
+    source ~/.df/dotfiles-local/zsh_theme_local.sh
 else
     ZSH_THEME="random"
 fi
