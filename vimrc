@@ -66,12 +66,6 @@ let g:vimtex_quickfix_ignore_filters = [
         \ 'Package etex Warning',
         \ 'Empty bibliography',
         \]
-" Install coc.nvim:
-" Make sure node and npm are installed. On ubuntu 20.04
-" sudo apt install nodejs npm
-" Use release branch (recommend)
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Install coc-vimtex: In your vim/neovim, run command: :CocInstall coc-vimtex
 
 Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
@@ -167,17 +161,6 @@ let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 0
 let g:airline#extensions#ale#enabled = 1
 let g:ale_python_pylint_options = "--init-hook='import sys; sys.path.append(\".\")'"
-
-Plug 'maralla/completor.vim'
-" Trigger completion automatically (Disable auto trigger by setting 1 as 0)
-let g:completor_auto_trigger = 1
-" Use Tab to select a completion from candidates.
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
-
-Plug 'masawada/completor-dictionary'
-autocmd FileType * execute 'setlocal dictionary='.expand($HOME.'/.vim/dict/'.&filetype.'.dict')
 
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
