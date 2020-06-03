@@ -132,3 +132,6 @@ if [ -f ~/.df/dotfiles-local/zshrc_local ]; then
     source ~/.df/dotfiles-local/zshrc_local
 fi
 
+if [ -f ~/.df/machine-specific/zshrc_machine_specific ]; then
+    source ~/.df/machine-specific/zshrc_machine_specific
+fi
