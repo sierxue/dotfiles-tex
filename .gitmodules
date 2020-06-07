@@ -7,4 +7,4 @@
 	url = https://github.com/sierxue/scripts.git
 [submodule "vim/UltiSnips"]
 	path = vim/UltiSnips
-	url = https://github.com/ddpom/UltiSnips.git
+	url = https://github.com/sierxue/UltiSnips.git
