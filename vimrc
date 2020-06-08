@@ -70,7 +70,6 @@ let g:vimtex_quickfix_ignore_filters = [
 Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
-let g:deoplete#enable_at_startup = 1
 Plug 'deoplete-plugins/deoplete-dictionary'
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
@@ -242,6 +241,7 @@ Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " Plug 'Shougo/deoplete.nvim' configurations for vimtex
+let g:deoplete#enable_at_startup = 1
 " https://github.com/lervag/vimtex/issues/1710#issuecomment-637284447
 call deoplete#custom#var('omni', 'input_patterns', {
         \ 'tex': g:vimtex#re#deoplete
@@ -249,6 +249,7 @@ call deoplete#custom#var('omni', 'input_patterns', {
 " Plug 'roxma/vim-hug-neovim-rpc' log configurations
 let $NVIM_PYTHON_LOG_FILE="/tmp/nvim_log"
 let $NVIM_PYTHON_LOG_LEVEL="DEBUG"
+" Plug 'deoplete-plugins/deoplete-dictionary' configurations
 " Sample configuration for dictionary source with multiple
 " dictionary files.
 setlocal dictionary+=/usr/share/dict/words
