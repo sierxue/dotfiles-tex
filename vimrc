@@ -71,6 +71,7 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 let g:deoplete#enable_at_startup = 1
+Plug 'deoplete-plugins/deoplete-dictionary'
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 " set to 1, the vim will refresh markdown when save the buffer or
@@ -248,6 +249,20 @@ call deoplete#custom#var('omni', 'input_patterns', {
 " Plug 'roxma/vim-hug-neovim-rpc' log configurations
 let $NVIM_PYTHON_LOG_FILE="/tmp/nvim_log"
 let $NVIM_PYTHON_LOG_LEVEL="DEBUG"
+" Sample configuration for dictionary source with multiple
+" dictionary files.
+setlocal dictionary+=/usr/share/dict/words
+setlocal dictionary+=/usr/share/dict/american-english
+setlocal dictionary+=~/.vim/dict/tex.dict
+" Remove this if you'd like to use fuzzy search
+call deoplete#custom#source(
+\ 'dictionary', 'matchers', ['matcher_head'])
+" If dictionary is already sorted, no need to sort it again.
+call deoplete#custom#source(
+\ 'dictionary', 'sorters', [])
+" Do not complete too short words
+call deoplete#custom#source(
+\ 'dictionary', 'min_pattern_length', 4)
 
 setlocal spell
 set spelllang=en_us,cjk
