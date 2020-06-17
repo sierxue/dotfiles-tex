@@ -4,11 +4,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/home/ganx/.oh-my-zsh"
 
-if [ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ];
-then
-    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions    
-fi
-
 if [ -f ~/.df/machine-specific/zshrc_machine_specific_theme ]; then
     source ~/.df/machine-specific/zshrc_machine_specific_theme
 elif [ -f ~/.df/dotfiles-local/zshrc_local_theme ]; then
@@ -75,6 +70,13 @@ DISABLE_UPDATE_PROMPT="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+
+# Add plugin zsh-autosuggestions.
+if [ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ];
+then
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions    
+fi
+
 # https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#Oh-my-zsh
 # We can set crontab to update plugin github.com/zsh-users/zsh-syntax-highlighting.
 if [ ! -d $ZSH/custom/plugins/zsh-syntax-highlighting ];
