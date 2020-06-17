@@ -9,10 +9,10 @@ then
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions    
 fi
 
-if [ -f ~/.df/machine-specific/zsh_theme_machine_specific.sh ]; then
-    source ~/.df/machine-specific/zsh_theme_machine_specific.sh
-elif [ -f ~/.df/dotfiles-local/zsh_theme_local.sh ]; then
-    source ~/.df/dotfiles-local/zsh_theme_local.sh
+if [ -f ~/.df/machine-specific/zshrc_machine_specific_theme ]; then
+    source ~/.df/machine-specific/zshrc_machine_specific_theme
+elif [ -f ~/.df/dotfiles-local/zshrc_local_theme ]; then
+    source ~/.df/dotfiles-local/zshrc_local_theme
 else
     ZSH_THEME="random"
 fi
