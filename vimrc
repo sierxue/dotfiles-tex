@@ -72,6 +72,66 @@ Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'deoplete-plugins/deoplete-dictionary'
 
+Plug 'jpalardy/vim-slime', { 'for': 'python' }
+Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
+"------------------------------------------------------------------------------
+" slime configuration
+"------------------------------------------------------------------------------
+" always use vimterminal
+let g:slime_target = 'vimterminal'
+
+" fix paste issues in ipython
+let g:slime_python_ipython = 1
+
+" Open terminal vertically; Make the vim terminal closed automatically.
+let g:slime_vimterminal_config = {"vertical": 1, "term_finish": "close"}
+
+" let g:slime_dont_ask_default = 1
+let g:slime_vimterminal_cmd = "ipython --matplotlib"
+
+"------------------------------------------------------------------------------
+" ipython-cell configuration
+"------------------------------------------------------------------------------
+" Keyboard mappings. <Leader> is \ (backslash) by default
+
+" map <Leader>r to run script
+nnoremap <Leader>r :IPythonCellRun<CR>
+
+" map <Leader>R to run script and time the execution
+nnoremap <Leader>R :IPythonCellRunTime<CR>
+
+" map <Leader>C to execute the current cell
+nnoremap <Leader>C :IPythonCellExecuteCell<CR>
+
+" map <Leader>c to execute the current cell and jump to the next cell
+nnoremap <Leader>c :IPythonCellExecuteCellJump<CR>
+
+" map <Leader>l to clear IPython screen
+nnoremap <Leader>l :IPythonCellClear<CR>
+
+" map <Leader>x to close all Matplotlib figure windows
+nnoremap <Leader>x :IPythonCellClose<CR>
+
+" map [c and ]c to jump to the previous and next cell header
+nnoremap [c :IPythonCellPrevCell<CR>
+nnoremap ]c :IPythonCellNextCell<CR>
+
+" map <Leader>h to send the current line or current selection to IPython
+nmap <Leader>h <Plug>SlimeLineSend
+xmap <Leader>h <Plug>SlimeRegionSend
+
+" map <Leader>p to run the previous command
+nnoremap <Leader>p :IPythonCellPrevCommand<CR>
+
+" map <Leader>Q to restart ipython
+nnoremap <Leader>Q :IPythonCellRestart<CR>
+
+" map <Leader>d to start debug mode
+nnoremap <Leader>d :SlimeSend1 %debug<CR>
+
+" map <Leader>q to exit debug mode or IPython
+nnoremap <Leader>q :SlimeSend1 exit<CR>
+
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 " set to 1, the vim will refresh markdown when save the buffer or
 " leave from insert mode, default 0 is auto refresh markdown as you edit or
