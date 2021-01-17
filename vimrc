@@ -44,27 +44,36 @@ call plug#begin('~/.vim/plugged')
 " Add other plugins here.
 
 Plug 'lervag/vimtex'
+let g:vimtex_syntax_conceal_default=1
+set conceallevel=2
 let g:tex_flavor = 'latex'
+let g:vimtex_view_general_options
+    \ = '-reuse-instance -forward-search @tex @line @pdf'
 " Use this option to disable/enable vimtex improved syntax highlighting.
 " Default value: 1
 let g:vimtex_syntax_enabled=1
 " Remove warning message: Can't use callbacks without +clientserver · Issue #507 · lervag/vimtex
+" let g:vimtex_compiler_latexmk = {'backend':'jobs'}
 let g:vimtex_compiler_latexmk = {'callback' : 0}
 let g:vimtex_view_method = 'zathura'
-" Disable overfull/underfull \hbox.
-let g:vimtex_quickfix_latexlog = {
-        \ 'overfull' : 0,
-        \ 'underfull' : 0,
-        \}
 let g:vimtex_quickfix_ignore_filters = [
         \ 'Unused global option(s)',
         \ 'FandolSong-Regular',
         \ 'FandolHei-Regular',
         \ 'FandolKai-Regular',
         \ 'FandolFang-Regular',
-        \ 'Package Fancyhdr Warning',
-        \ 'Package etex Warning',
         \ 'Empty bibliography',
+        \ 'Underfull',
+        \ 'Overfull',
+        \ 'There were undefined references',
+        \ 'Float too large for page',
+        \ 'Package biblatex Warning',
+        \ 'Package caption Warning',
+        \ 'Package etex Warning',
+        \ 'Package Fancyhdr Warning',
+        \ 'Package hyperref Warning',
+        \ 'Package pagecolor Warning',
+        \ 'Package tcolorbox Warning',
         \]
 
 Plug 'Shougo/deoplete.nvim'
