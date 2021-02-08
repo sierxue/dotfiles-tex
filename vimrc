@@ -33,12 +33,16 @@ autocmd! bufwritepost .vimrc source %
 " Load vim-plug
 "---------------
 
-" Plugins will be downloaded under the specified directory.
+" Install vim-plug if not found
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
+
+" Run PlugInstall if there are missing plugins
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \| PlugInstall --sync | source $MYVIMRC
+\| endif
 
 call plug#begin('~/.vim/plugged')
 " Add other plugins here.
@@ -81,7 +85,7 @@ Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'deoplete-plugins/deoplete-dictionary'
 
-Plug 'jpalardy/vim-slime', { 'for': 'python' }
+Plug 'jpalardy/vim-slime', { 'branch': 'main', 'for': 'python' }
 Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
 "------------------------------------------------------------------------------
 " slime configuration
