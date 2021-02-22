@@ -210,10 +210,6 @@ nmap <C-s> <Plug>MarkdownPreview
 nmap <M-s> <Plug>MarkdownPreviewStop
 nmap <C-p> <Plug>MarkdownPreviewToggle
 
-Plug 'vimwiki/vimwiki'
-let g:vimwiki_list = [{'path': '~/vimwiki/',
-                      \ 'syntax': 'markdown', 'ext': '.md'}]
-
 Plug 'w0rp/ale'
 " side bar display
 let g:ale_sign_column_always = 1
@@ -248,12 +244,6 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>" " default <c-z>
 let g:UltiSnipsEditSplit="vertical"
 " To use python version 3.x: >
 let g:UltiSnipsUsePythonVersion = 3
-
-" Add settings from 'github.com/gillescastel/latex-snippets'
-Plug 'KeitaNakamura/tex-conceal.vim'
-    set conceallevel=1
-    let g:tex_conceal='abdmg'
-    hi Conceal ctermbg=none
 
 " Folding
 " https://vim.fandom.com/wiki/Folding#Indent_folding_with_manual_folds
@@ -301,7 +291,35 @@ Plug 'vim-airline/vim-airline'
 Plug 'mhinz/vim-startify'
 let g:startify_custom_header = []
 
+Plug 'luochen1990/rainbow'
+let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
+
 Plug 'lifepillar/vim-cheat40'
+
+Plug 'preservim/nerdcommenter'
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
+" Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+
+" Enable NERDCommenterToggle to check all selected lines is commented or not
+let g:NERDToggleCheckAllLines = 1
 
 Plug '907th/vim-auto-save'
 let g:auto_save = 1  " enable AutoSave on Vim startup
@@ -340,6 +358,9 @@ call deoplete#custom#source(
 
 setlocal spell
 set spelllang=en_us,cjk
+
+" https://castel.dev/post/lecture-notes-1/
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 " https://www.zhihu.com/question/30737688/answer/80203854
 autocmd FileType tex setlocal spell spelllang=en_us,cjk
 autocmd FileType markdown setlocal spell spelllang=en_us,cjk
@@ -362,7 +383,7 @@ set number      " Display line number.
 " https://stackoverflow.com/a/26284471/2400133
 set columns=86
 " autocmd VimResized * if (&columns > 72) | set columns=72| endif
-set textwidth=72
+" set textwidth=72
 set wrap
 set linebreak
 set showbreak=+
@@ -394,6 +415,7 @@ set expandtab              " Use spaces instead of tabs.
 set softtabstop =4         " Tab key indents by 4 spaces.
 set shiftwidth  =4         " >> indents by 4 spaces.
 set shiftround             " >> indents to next multiple of 'shiftwidth'.
+autocmd FileType tex setlocal shiftwidth=2 tabstop=2
 
 set backspace   =indent,eol,start  " Make backspace work as you expect.
 set hidden                 " Switch between buffers without having to save first.
