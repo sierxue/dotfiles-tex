@@ -4,7 +4,7 @@
 	ignore = dirty
 [submodule "scripts"]
 	path = scripts
-	url = https://github.com/sierxue/scripts.git
+	url = https://gitee.com/sierxue/scripts.git
 [submodule "vim/UltiSnips"]
 	path = vim/UltiSnips
 	url = https://github.com/sierxue/UltiSnips.git
