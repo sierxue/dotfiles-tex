@@ -1,6 +1,6 @@
 [submodule "dotbot"]
 	path = dotbot
-	url = https://github.com/anishathalye/dotbot
+	url = https://gitee.com/sierxue/dotbot
 	ignore = dirty
 [submodule "scripts"]
 	path = scripts
